@@ -12,13 +12,16 @@ export function Sidebar({
   ...props
 }: SidebarProps) {
   return (
-    <aside className={cn("h-screen w-64 border-r p-4", className)} {...props}>
+    <aside
+      className={cn("h-screen w-64 border-r border-zinc-200 p-4 dark:border-white/10", className)}
+      {...props}
+    >
       <nav className="space-y-2">
         {items.map((item, index) => (
           <a
             key={`${item.href}-${index}`}
             href={item.href}
-            className="block rounded-md px-3 py-2 text-sm hover:bg-muted"
+            className="block rounded-md px-3 py-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             {item.label}
           </a>

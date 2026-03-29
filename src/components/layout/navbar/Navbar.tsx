@@ -10,7 +10,10 @@ export function Navbar({
 }: NavbarProps) {
   return (
     <header
-      className={cn("flex h-14 items-center justify-between border-b px-6", className)}
+      className={cn(
+        "flex h-14 items-center justify-between border-b border-zinc-200 px-6 dark:border-white/10",
+        className,
+      )}
       {...props}
     >
       <h1 className="text-lg font-semibold">{brand}</h1>
