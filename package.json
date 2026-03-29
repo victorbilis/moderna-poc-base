@@ -30,6 +30,9 @@
   "files": [
     "dist"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
