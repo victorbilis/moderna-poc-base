@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import "@/styles/runtime";
 import type { SidebarProps } from "./Sidebar.types";
 
 const defaultItems = [
