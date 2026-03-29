@@ -1993,7 +1993,8 @@ var Ze = te("group/button inline-flex shrink-0 items-center justify-center round
 	variants: {
 		variant: {
 			default: "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-400",
-			outline: "border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:text-blue-800 aria-expanded:bg-blue-50 aria-expanded:text-blue-800 dark:border-blue-400/30 dark:bg-blue-500/10 dark:text-blue-100 dark:hover:bg-blue-500/20 dark:hover:text-blue-50 dark:aria-expanded:bg-blue-500/20 dark:aria-expanded:text-blue-50",
+			primary: "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-400",
+			outline: "border-blue-500/50 bg-blue-50 text-blue-700 hover:border-blue-600 hover:bg-blue-100 hover:text-blue-800 aria-expanded:border-blue-600 aria-expanded:bg-blue-100 aria-expanded:text-blue-800 dark:border-blue-400/50 dark:bg-blue-500/15 dark:text-blue-100 dark:hover:border-blue-300 dark:hover:bg-blue-500/25 dark:hover:text-blue-50 dark:aria-expanded:border-blue-300 dark:aria-expanded:bg-blue-500/25 dark:aria-expanded:text-blue-50",
 			secondary: "bg-blue-100 text-blue-900 hover:bg-blue-200 aria-expanded:bg-blue-200 aria-expanded:text-blue-900 dark:bg-blue-500/20 dark:text-blue-100 dark:hover:bg-blue-500/30 dark:aria-expanded:bg-blue-500/30 dark:aria-expanded:text-blue-50",
 			ghost: "hover:bg-blue-50 hover:text-blue-800 aria-expanded:bg-blue-50 aria-expanded:text-blue-800 dark:hover:bg-blue-500/15 dark:hover:text-blue-100 dark:aria-expanded:bg-blue-500/15 dark:aria-expanded:text-blue-100",
 			destructive: "bg-red-500/10 text-red-600 hover:bg-red-500/20 focus-visible:border-red-500/40 focus-visible:ring-red-500/20 dark:bg-red-500/20 dark:text-red-300 dark:hover:bg-red-500/30 dark:focus-visible:border-red-400/40 dark:focus-visible:ring-red-400/40",
