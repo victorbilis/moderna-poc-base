@@ -6,10 +6,10 @@
 @custom-variant dark (&:is(.dark *));
 @layer base {
   * {
-    @apply border-zinc-200 outline-zinc-400/50 dark:border-white/10 dark:outline-zinc-500/50;
+    @apply border-slate-200 outline-blue-400/50 dark:border-white/10 dark:outline-blue-400/40;
   }
   body {
-    @apply bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50;
+    @apply bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50;
   }
   html {
     @apply font-sans;

@@ -5,21 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 export const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-zinc-400 focus-visible:ring-3 focus-visible:ring-zinc-400/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:focus-visible:border-zinc-500 dark:focus-visible:ring-zinc-500/50 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-blue-500 focus-visible:ring-3 focus-visible:ring-blue-500/30 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-red-500 aria-invalid:ring-3 aria-invalid:ring-red-500/20 dark:focus-visible:border-blue-400 dark:focus-visible:ring-blue-400/40 dark:aria-invalid:border-red-400 dark:aria-invalid:ring-red-400/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default:
-          "bg-zinc-950 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200",
+          "bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-400",
         outline:
-          "border-zinc-200 bg-white hover:bg-zinc-100 hover:text-zinc-950 aria-expanded:bg-zinc-100 aria-expanded:text-zinc-950 dark:border-white/15 dark:bg-white/5 dark:text-zinc-50 dark:hover:bg-white/10 dark:hover:text-zinc-50 dark:aria-expanded:bg-white/10 dark:aria-expanded:text-zinc-50",
+          "border-blue-200 bg-white text-blue-700 hover:bg-blue-50 hover:text-blue-800 aria-expanded:bg-blue-50 aria-expanded:text-blue-800 dark:border-blue-400/30 dark:bg-blue-500/10 dark:text-blue-100 dark:hover:bg-blue-500/20 dark:hover:text-blue-50 dark:aria-expanded:bg-blue-500/20 dark:aria-expanded:text-blue-50",
         secondary:
-          "bg-zinc-100 text-zinc-950 hover:bg-zinc-200 aria-expanded:bg-zinc-200 aria-expanded:text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700 dark:aria-expanded:bg-zinc-700 dark:aria-expanded:text-zinc-50",
+          "bg-blue-100 text-blue-900 hover:bg-blue-200 aria-expanded:bg-blue-200 aria-expanded:text-blue-900 dark:bg-blue-500/20 dark:text-blue-100 dark:hover:bg-blue-500/30 dark:aria-expanded:bg-blue-500/30 dark:aria-expanded:text-blue-50",
         ghost:
-          "hover:bg-zinc-100 hover:text-zinc-950 aria-expanded:bg-zinc-100 aria-expanded:text-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:aria-expanded:bg-zinc-800 dark:aria-expanded:text-zinc-50",
+          "hover:bg-blue-50 hover:text-blue-800 aria-expanded:bg-blue-50 aria-expanded:text-blue-800 dark:hover:bg-blue-500/15 dark:hover:text-blue-100 dark:aria-expanded:bg-blue-500/15 dark:aria-expanded:text-blue-100",
         destructive:
           "bg-red-500/10 text-red-600 hover:bg-red-500/20 focus-visible:border-red-500/40 focus-visible:ring-red-500/20 dark:bg-red-500/20 dark:text-red-300 dark:hover:bg-red-500/30 dark:focus-visible:border-red-400/40 dark:focus-visible:ring-red-400/40",
-        link: "text-zinc-950 underline-offset-4 hover:underline dark:text-zinc-50",
+        link: "text-blue-700 underline-offset-4 hover:underline dark:text-blue-300",
       },
       size: {
         default:

@@ -11,7 +11,7 @@ export function Navbar({
   return (
     <header
       className={cn(
-        "flex h-14 items-center justify-between border-b border-zinc-200 px-6 dark:border-white/10",
+        "flex h-14 items-center justify-between border-b border-slate-200 bg-white/80 px-6 dark:border-white/10 dark:bg-slate-950/80",
         className,
       )}
       {...props}
