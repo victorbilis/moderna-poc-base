@@ -1825,18 +1825,18 @@ function $e({ brand: e = "Base UI", actions: t, className: n, ...r }) {
 		position: "static",
 		color: "inherit",
 		elevation: 0,
-		className: $("border-b border-slate-200 bg-white/85 shadow-none backdrop-blur-md dark:border-white/10 dark:bg-slate-950/85", n),
+		className: $("border-b border-slate-700 bg-slate-900 text-white shadow-none", n),
 		...r,
 		children: /* @__PURE__ */ o(u, {
 			variant: "dense",
-			className: "min-h-14 justify-between px-6",
+			className: "min-h-14 justify-between px-6 text-white",
 			children: [/* @__PURE__ */ a(ee, {
 				variant: "h6",
 				component: "div",
-				className: "font-semibold",
+				className: "font-semibold text-white",
 				children: e
 			}), /* @__PURE__ */ a(l, {
-				className: "flex items-center gap-2",
+				className: "flex items-center gap-2 text-white [&_button]:border-white [&_button]:text-white [&_button:hover]:bg-white/10",
 				children: t ?? /* @__PURE__ */ a(Qe, {
 					variant: "outline",
 					children: "Login"
@@ -1857,20 +1857,23 @@ var et = [{
 function tt({ items: e = et, className: t, ...n }) {
 	return /* @__PURE__ */ a(l, {
 		component: "aside",
-		className: $("h-screen w-64 border-r border-slate-200 bg-white/85 p-4 dark:border-white/10 dark:bg-slate-950/85", t),
+		className: $("h-screen w-64 border-r border-slate-700 bg-slate-900 p-4 text-white", t),
 		...n,
 		children: /* @__PURE__ */ a(d, {
 			disablePadding: !0,
-			className: "flex flex-col gap-1",
+			className: "flex flex-col gap-1 text-white",
 			children: e.map((e, t) => /* @__PURE__ */ a(f, {
 				disablePadding: !0,
 				children: /* @__PURE__ */ a(p, {
 					component: "a",
 					href: e.href,
-					className: "rounded-md",
+					className: "rounded-md text-white hover:bg-white/10 hover:text-white",
 					children: /* @__PURE__ */ a(m, {
 						primary: e.label,
-						slotProps: { primary: { variant: "body2" } }
+						slotProps: { primary: {
+							variant: "body2",
+							className: "text-white"
+						} }
 					})
 				})
 			}, `${e.href}-${String(t)}`))
@@ -1882,7 +1885,7 @@ function tt({ items: e = et, className: t, ...n }) {
 function nt({ className: e, contentClassName: t, children: n, navbarProps: r, sidebarProps: i, ...s }) {
 	let { className: c, ...u } = i ?? {};
 	return /* @__PURE__ */ o(l, {
-		className: $("min-h-screen bg-slate-50 dark:bg-slate-950", e),
+		className: $("min-h-screen bg-slate-100", e),
 		...s,
 		children: [/* @__PURE__ */ a($e, { ...r }), /* @__PURE__ */ o(l, {
 			className: "flex",
@@ -1891,7 +1894,7 @@ function nt({ className: e, contentClassName: t, children: n, navbarProps: r, si
 				...u
 			}), /* @__PURE__ */ a(l, {
 				component: "main",
-				className: $("flex-1 p-6", t),
+				className: $("flex-1 bg-white p-6 text-black", t),
 				children: n
 			})]
 		})]
