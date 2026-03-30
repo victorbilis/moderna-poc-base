@@ -17,12 +17,12 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime",
-        "react/jsx-dev-runtime",
-      ],
+      external: (id) =>
+        id === "react" ||
+        id === "react-dom" ||
+        id.startsWith("react/") ||
+        id.startsWith("@mui/") ||
+        id.startsWith("@emotion/"),
       output: {
         globals: {
           react: "React",

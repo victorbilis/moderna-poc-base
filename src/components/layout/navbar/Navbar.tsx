@@ -1,26 +1,31 @@
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { Button } from "@/components/button";
+import { cn } from "@/lib/cn";
 import type { NavbarProps } from "./Navbar.types";
 
-export function Navbar({
-  className,
-  brand = "Base UI",
-  actions,
-  ...props
-}: NavbarProps) {
+export function Navbar({ brand = "Base UI", actions, className, ...props }: NavbarProps) {
   return (
-    <header
+    <AppBar
+      position="static"
+      color="inherit"
+      elevation={0}
       className={cn(
-        "flex h-14 items-center justify-between border-b border-slate-200 bg-white/80 px-6 dark:border-white/10 dark:bg-slate-950/80",
+        "border-b border-slate-200 bg-white/85 shadow-none backdrop-blur-md dark:border-white/10 dark:bg-slate-950/85",
         className,
       )}
       {...props}
     >
-      <h1 className="text-lg font-semibold">{brand}</h1>
-
-      <div className="flex items-center gap-2">
-        {actions ?? <Button variant="outline">Login</Button>}
-      </div>
-    </header>
+      <Toolbar variant="dense" className="min-h-14 justify-between px-6">
+        <Typography variant="h6" component="div" className="font-semibold">
+          {brand}
+        </Typography>
+        <Box className="flex items-center gap-2">
+          {actions ?? <Button variant="outline">Login</Button>}
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
+import Box from "@mui/material/Box";
 import { Navbar } from "../navbar";
 import { Sidebar } from "../sidebar";
+import { cn } from "@/lib/cn";
 import type { AppLayoutProps } from "./AppLayout.types";
 
 export function AppLayout({
@@ -14,14 +15,19 @@ export function AppLayout({
   const { className: sidebarClassName, ...restSidebarProps } = sidebarProps ?? {};
 
   return (
-    <div className={cn("min-h-screen bg-slate-50 dark:bg-slate-950", className)} {...props}>
+    <Box className={cn("min-h-screen bg-slate-50 dark:bg-slate-950", className)} {...props}>
       <Navbar {...navbarProps} />
 
-      <div className="flex">
-        <Sidebar className={cn("h-[calc(100vh-3.5rem)]", sidebarClassName)} {...restSidebarProps} />
+      <Box className="flex">
+        <Sidebar
+          className={cn("h-[calc(100vh-3.5rem)]", sidebarClassName)}
+          {...restSidebarProps}
+        />
 
-        <main className={cn("flex-1 p-6", contentClassName)}>{children}</main>
-      </div>
-    </div>
+        <Box component="main" className={cn("flex-1 p-6", contentClassName)}>
+          {children}
+        </Box>
+      </Box>
+    </Box>
   );
 }
