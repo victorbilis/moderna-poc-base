@@ -5,7 +5,7 @@ export function createBaseTheme() {
     cssVariables: true,
     palette: {
       mode: "light",
-      primary: { main: "#2563eb" },
+      primary: { main: "#3D637D" },
       secondary: { main: "#1d4ed8" },
       background: { default: "#f8fafc", paper: "#ffffff" },
       error: { main: "#dc2626" },

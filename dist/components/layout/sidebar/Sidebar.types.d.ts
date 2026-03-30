@@ -5,6 +5,8 @@ export interface SidebarItem {
     label: React.ReactNode;
     /** Ícone à esquerda do rótulo (ex.: ícone MUI ou SVG). */
     icon?: React.ReactNode;
+    /** Destaque visual do item ativo (ex.: rota atual). */
+    selected?: boolean;
 }
 export interface SidebarProps extends Omit<BoxProps, "sx" | "style"> {
     items?: SidebarItem[];

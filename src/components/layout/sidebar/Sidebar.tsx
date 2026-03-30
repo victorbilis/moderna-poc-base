@@ -49,7 +49,7 @@ function IconUsers() {
 }
 
 const defaultItems = [
-  { href: "#", label: "Dashboard", icon: <IconDashboard /> },
+  { href: "#", label: "Dashboard", icon: <IconDashboard />, selected: true },
   { href: "#", label: "Usuários", icon: <IconUsers /> },
 ];
 
@@ -58,7 +58,7 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
     <Box
       component="aside"
       className={cn(
-        "flex h-screen w-64 flex-col border-r border-slate-700/80 bg-gradient-to-b from-slate-900 to-slate-950 p-4 text-white shadow-[inset_-1px_0_0_0_rgba(255,255,255,0.04)]",
+        "flex h-screen w-64 flex-col border-r border-slate-200 bg-white p-4 text-slate-900",
         className,
       )}
       {...props}
@@ -70,17 +70,28 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
       >
         Menu
       </Typography>
-      <List disablePadding className="flex flex-col gap-0.5 text-white">
+      <List disablePadding className="flex flex-col gap-0.5 text-slate-900">
         {items.map((item, index) => (
           <ListItem key={`${item.href}-${String(index)}`} disablePadding className="block">
             <ListItemButton
               component="a"
               href={item.href}
-              className="rounded-lg px-3 py-2 text-white transition-colors hover:bg-white/10 hover:text-white hover:[&_.sidebar-item-icon]:text-white"
+              aria-current={item.selected ? "page" : undefined}
+              className={cn(
+                "rounded-lg px-3 py-2 text-slate-800 transition-colors",
+                "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800",
+                item.selected &&
+                  "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900",
+              )}
             >
               {item.icon != null ? (
-                <ListItemIcon className="min-w-0 shrink-0 text-slate-400 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]">
-                  <span className="sidebar-item-icon flex items-center justify-center text-slate-400 transition-colors">
+                <ListItemIcon
+                  className={cn(
+                    "min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]",
+                    item.selected && "text-slate-900",
+                  )}
+                >
+                  <span className="sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors">
                     {item.icon}
                   </span>
                 </ListItemIcon>
@@ -88,7 +99,10 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
               <ListItemText
                 primary={item.label}
                 slotProps={{
-                  primary: { variant: "body2", className: "font-medium text-slate-100" },
+                  primary: {
+                    variant: "body2",
+                    className: cn("font-medium", item.selected ? "text-slate-900" : "text-slate-800"),
+                  },
                 }}
               />
             </ListItemButton>
