@@ -1,4 +1,14 @@
 /* Ordem de camadas: utilitários Tailwind sobrepõem estilos do MUI (@layer mui). */
 @layer theme, base, mui, components, utilities;
 @import "tailwindcss";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/nunito";
+
+@theme {
+  --font-sans: "Nunito Variable", "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}

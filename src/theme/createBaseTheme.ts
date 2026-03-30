@@ -12,13 +12,10 @@ export function createBaseTheme() {
     },
     typography: {
       fontFamily: [
-        "Geist Variable",
-        "Geist",
+        '"Nunito Variable"',
+        '"Nunito"',
         "system-ui",
         "Segoe UI",
-        "Roboto",
-        "Helvetica",
-        "Arial",
         "sans-serif",
       ].join(","),
     },
