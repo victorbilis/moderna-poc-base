@@ -15,7 +15,7 @@ export function AppLayout({
   const { className: sidebarClassName, ...restSidebarProps } = sidebarProps ?? {};
 
   return (
-    <Box className={cn("min-h-screen bg-slate-50 dark:bg-slate-950", className)} {...props}>
+    <Box className={cn("min-h-screen bg-slate-100", className)} {...props}>
       <Navbar {...navbarProps} />
 
       <Box className="flex">
@@ -24,7 +24,7 @@ export function AppLayout({
           {...restSidebarProps}
         />
 
-        <Box component="main" className={cn("flex-1 p-6", contentClassName)}>
+        <Box component="main" className={cn("flex-1 bg-white p-6 text-black", contentClassName)}>
           {children}
         </Box>
       </Box>

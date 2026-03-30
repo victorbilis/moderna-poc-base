@@ -16,16 +16,23 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
     <Box
       component="aside"
       className={cn(
-        "h-screen w-64 border-r border-slate-200 bg-white/85 p-4 dark:border-white/10 dark:bg-slate-950/85",
+        "h-screen w-64 border-r border-slate-700 bg-slate-900 p-4 text-white",
         className,
       )}
       {...props}
     >
-      <List disablePadding className="flex flex-col gap-1">
+      <List disablePadding className="flex flex-col gap-1 text-white">
         {items.map((item, index) => (
           <ListItem key={`${item.href}-${String(index)}`} disablePadding>
-            <ListItemButton component="a" href={item.href} className="rounded-md">
-              <ListItemText primary={item.label} slotProps={{ primary: { variant: "body2" } }} />
+            <ListItemButton
+              component="a"
+              href={item.href}
+              className="rounded-md text-white hover:bg-white/10 hover:text-white"
+            >
+              <ListItemText
+                primary={item.label}
+                slotProps={{ primary: { variant: "body2", className: "text-white" } }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
