@@ -18,8 +18,8 @@ export function BaseThemeProvider({ children, theme }: BaseThemeProviderProps) {
 
   return (
     <StyledEngineProvider enableCssLayer>
-      <GlobalStyles styles={layerOrder} />
       <ThemeProvider theme={value}>
+        <GlobalStyles styles={layerOrder} />
         <CssBaseline />
         {children}
       </ThemeProvider>
