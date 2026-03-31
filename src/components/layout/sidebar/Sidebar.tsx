@@ -86,11 +86,10 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
                 href={item.href}
                 aria-current={item.selected ? "page" : undefined}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-slate-800 transition-colors",
+                  "items-center rounded-lg px-3 py-2 text-slate-800 transition-colors",
                   "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800",
                   item.selected &&
                     "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900",
-                  hasSubtitle ? "items-start" : "items-center",
                 )}
               >
                 {item.icon != null ? (
@@ -98,7 +97,6 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
                     className={cn(
                       "min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]",
                       item.selected && "text-slate-900",
-                      hasSubtitle && "pt-0.5",
                     )}
                   >
                     <span className="sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors">

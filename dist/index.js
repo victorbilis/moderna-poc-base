@@ -1962,9 +1962,9 @@ function at({ items: e = it, className: t, ...n }) {
 						component: "a",
 						href: e.href,
 						"aria-current": e.selected ? "page" : void 0,
-						className: $("rounded-lg px-3 py-2 text-slate-800 transition-colors", "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800", e.selected && "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900", n ? "items-start" : "items-center"),
+						className: $("items-center rounded-lg px-3 py-2 text-slate-800 transition-colors", "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800", e.selected && "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900"),
 						children: [e.icon == null ? null : /* @__PURE__ */ o(h, {
-							className: $("min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]", e.selected && "text-slate-900", n && "pt-0.5"),
+							className: $("min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]", e.selected && "text-slate-900"),
 							children: /* @__PURE__ */ o("span", {
 								className: "sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors",
 								children: e.icon
