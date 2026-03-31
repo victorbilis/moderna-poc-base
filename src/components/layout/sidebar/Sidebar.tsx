@@ -49,8 +49,14 @@ function IconUsers() {
 }
 
 const defaultItems = [
-  { href: "#", label: "Dashboard", icon: <IconDashboard />, selected: true },
-  { href: "#", label: "Usuários", icon: <IconUsers /> },
+  {
+    href: "#",
+    label: "Dashboard",
+    subtitle: "Visão geral",
+    icon: <IconDashboard />,
+    selected: true,
+  },
+  { href: "#", label: "Usuários", subtitle: "Gestão de contas", icon: <IconUsers /> },
 ];
 
 export function Sidebar({ items = defaultItems, className, ...props }: SidebarProps) {
@@ -71,43 +77,64 @@ export function Sidebar({ items = defaultItems, className, ...props }: SidebarPr
         Menu
       </Typography>
       <List disablePadding className="flex flex-col gap-0.5 text-slate-900">
-        {items.map((item, index) => (
-          <ListItem key={`${item.href}-${String(index)}`} disablePadding className="block">
-            <ListItemButton
-              component="a"
-              href={item.href}
-              aria-current={item.selected ? "page" : undefined}
-              className={cn(
-                "rounded-lg px-3 py-2 text-slate-800 transition-colors",
-                "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800",
-                item.selected &&
-                  "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900",
-              )}
-            >
-              {item.icon != null ? (
-                <ListItemIcon
-                  className={cn(
-                    "min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]",
-                    item.selected && "text-slate-900",
-                  )}
-                >
-                  <span className="sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors">
-                    {item.icon}
-                  </span>
-                </ListItemIcon>
-              ) : null}
-              <ListItemText
-                primary={item.label}
-                slotProps={{
-                  primary: {
-                    variant: "body2",
-                    className: cn("font-medium", item.selected ? "text-slate-900" : "text-slate-800"),
-                  },
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {items.map((item, index) => {
+          const hasSubtitle = item.subtitle != null;
+          return (
+            <ListItem key={`${item.href}-${String(index)}`} disablePadding className="block">
+              <ListItemButton
+                component="a"
+                href={item.href}
+                aria-current={item.selected ? "page" : undefined}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-slate-800 transition-colors",
+                  "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800",
+                  item.selected &&
+                    "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900",
+                  hasSubtitle ? "items-start" : "items-center",
+                )}
+              >
+                {item.icon != null ? (
+                  <ListItemIcon
+                    className={cn(
+                      "min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]",
+                      item.selected && "text-slate-900",
+                      hasSubtitle && "pt-0.5",
+                    )}
+                  >
+                    <span className="sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors">
+                      {item.icon}
+                    </span>
+                  </ListItemIcon>
+                ) : null}
+                <ListItemText
+                  primary={item.label}
+                  secondary={hasSubtitle ? item.subtitle : undefined}
+                  slotProps={{
+                    primary: {
+                      variant: "body2",
+                      className: cn(
+                        "font-medium",
+                        item.selected ? "text-slate-900" : "text-slate-800",
+                      ),
+                    },
+                    ...(hasSubtitle
+                      ? {
+                          secondary: {
+                            variant: "caption",
+                            component: "span",
+                            className: cn(
+                              "mt-0.5 block leading-snug",
+                              item.selected ? "text-slate-700" : "text-slate-500",
+                            ),
+                          },
+                        }
+                      : {}),
+                  }}
+                />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
       </List>
     </Box>
   );

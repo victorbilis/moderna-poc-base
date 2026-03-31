@@ -1931,11 +1931,13 @@ function nt() {
 var rt = [{
 	href: "#",
 	label: "Dashboard",
+	subtitle: "Visão geral",
 	icon: /* @__PURE__ */ a(tt, {}),
 	selected: !0
 }, {
 	href: "#",
 	label: "Usuários",
+	subtitle: "Gestão de contas",
 	icon: /* @__PURE__ */ a(nt, {})
 }];
 function it({ items: e = rt, className: t, ...n }) {
@@ -1951,29 +1953,40 @@ function it({ items: e = rt, className: t, ...n }) {
 		}), /* @__PURE__ */ a(d, {
 			disablePadding: !0,
 			className: "flex flex-col gap-0.5 text-slate-900",
-			children: e.map((e, t) => /* @__PURE__ */ a(f, {
-				disablePadding: !0,
-				className: "block",
-				children: /* @__PURE__ */ o(p, {
-					component: "a",
-					href: e.href,
-					"aria-current": e.selected ? "page" : void 0,
-					className: $("rounded-lg px-3 py-2 text-slate-800 transition-colors", "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800", e.selected && "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900"),
-					children: [e.icon == null ? null : /* @__PURE__ */ a(m, {
-						className: $("min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]", e.selected && "text-slate-900"),
-						children: /* @__PURE__ */ a("span", {
-							className: "sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors",
-							children: e.icon
-						})
-					}), /* @__PURE__ */ a(h, {
-						primary: e.label,
-						slotProps: { primary: {
-							variant: "body2",
-							className: $("font-medium", e.selected ? "text-slate-900" : "text-slate-800")
-						} }
-					})]
-				})
-			}, `${e.href}-${String(t)}`))
+			children: e.map((e, t) => {
+				let n = e.subtitle != null;
+				return /* @__PURE__ */ a(f, {
+					disablePadding: !0,
+					className: "block",
+					children: /* @__PURE__ */ o(p, {
+						component: "a",
+						href: e.href,
+						"aria-current": e.selected ? "page" : void 0,
+						className: $("rounded-lg px-3 py-2 text-slate-800 transition-colors", "hover:bg-slate-100 hover:[&_.sidebar-item-icon]:text-slate-800", e.selected && "bg-[#8ACEFE] hover:bg-[#8ACEFE] [&_.sidebar-item-icon]:text-slate-900", n ? "items-start" : "items-center"),
+						children: [e.icon == null ? null : /* @__PURE__ */ a(m, {
+							className: $("min-w-0 shrink-0 text-slate-500 [&:not(:empty)]:mr-3 [&:not(:empty)]:min-w-[2.25rem]", e.selected && "text-slate-900", n && "pt-0.5"),
+							children: /* @__PURE__ */ a("span", {
+								className: "sidebar-item-icon flex items-center justify-center text-slate-500 transition-colors",
+								children: e.icon
+							})
+						}), /* @__PURE__ */ a(h, {
+							primary: e.label,
+							secondary: n ? e.subtitle : void 0,
+							slotProps: {
+								primary: {
+									variant: "body2",
+									className: $("font-medium", e.selected ? "text-slate-900" : "text-slate-800")
+								},
+								...n ? { secondary: {
+									variant: "caption",
+									component: "span",
+									className: $("mt-0.5 block leading-snug", e.selected ? "text-slate-700" : "text-slate-500")
+								} } : {}
+							}
+						})]
+					})
+				}, `${e.href}-${String(t)}`);
+			})
 		})]
 	});
 }
