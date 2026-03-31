@@ -42,12 +42,16 @@ function g() {
 var _ = "@layer theme, base, mui, components, utilities;";
 function ne({ children: a, theme: c }) {
 	let l = e.useMemo(() => g(), []);
-	return /* @__PURE__ */ s(i, {
+	return /* @__PURE__ */ o(i, {
 		enableCssLayer: !0,
-		children: [/* @__PURE__ */ o(r, { styles: _ }), /* @__PURE__ */ s(n, {
+		children: /* @__PURE__ */ s(n, {
 			theme: c ?? l,
-			children: [/* @__PURE__ */ o(t, {}), a]
-		})]
+			children: [
+				/* @__PURE__ */ o(r, { styles: _ }),
+				/* @__PURE__ */ o(t, {}),
+				a
+			]
+		})
 	});
 }
 //#endregion
