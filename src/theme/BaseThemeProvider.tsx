@@ -13,13 +13,14 @@ export interface BaseThemeProviderProps {
 }
 
 export function BaseThemeProvider({ children, theme }: BaseThemeProviderProps) {
-  const value = theme ?? createBaseTheme();
+  const defaultTheme = React.useMemo(() => createBaseTheme(), []);
+  const value = theme ?? defaultTheme;
 
   return (
     <StyledEngineProvider enableCssLayer>
       <GlobalStyles styles={layerOrder} />
       <ThemeProvider theme={value}>
-        <CssBaseline enableColorScheme />
+        <CssBaseline />
         {children}
       </ThemeProvider>
     </StyledEngineProvider>

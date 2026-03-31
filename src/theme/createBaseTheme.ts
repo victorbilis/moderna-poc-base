@@ -2,7 +2,9 @@ import { createTheme } from "@mui/material/styles";
 
 export function createBaseTheme() {
   return createTheme({
-    cssVariables: true,
+    cssVariables: {
+      disableCssColorScheme: true,
+    },
     palette: {
       mode: "light",
       primary: { main: "#3D637D" },
